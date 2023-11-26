@@ -66,7 +66,6 @@ type cases = [
   >
 ];
 
-// @ts-expect-error
 type error = TupleToObject<[[1, 2], {}]>;
 
 /* _____________ 下一步 _____________ */
