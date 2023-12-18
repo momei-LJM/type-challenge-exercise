@@ -23,8 +23,10 @@
 */
 
 /* _____________ 你的代码 _____________ */
-
-type Last<T extends any[]> = [never, ...T][T["length"]];
+// 1.
+type Last<T> = T extends [...infer F, infer T] ? T : never;
+// 2.类型头部加一个never项
+// type Last<T extends any[]> = [never, ...T][T["length"]];
 
 /* _____________ 测试用例 _____________ */
 import type { Equal, Expect } from "@type-challenges/utils";
